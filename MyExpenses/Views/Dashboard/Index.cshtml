@@ -1,0 +1,75 @@
+﻿<div class="row py-2">
+    <span class="col-8"></span>
+    <span class="col-4" style="text-align: end; color: black; font: bold"><a asp-controller="Home" asp-action="Index" style="text-decoration: none;"><i class="bi bi-arrow-left" style="padding-right: 2px;"></i><span style="font-weight:bolder;">Back</span></a></span>
+</div>
+
+<h2>Dashboard</h2>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    canvas {
+        /* Add any styles for the canvas here if needed */
+    }
+</style>
+
+<canvas id="barChart" width="400" height="400"></canvas>
+<p class="pt-4" id="totalExpenses"></p>
+
+<script>
+    // Same as pie chart code
+    var expensesData = [
+        { "category": "Food", "cost": 500 },
+        { "category": "Travel", "cost": 1000 },
+        { "category": "Gaming", "cost": 250 },
+        { "category": "Rent", "cost": 100 },
+        { "category": "Snacks", "cost": 20 }
+    ];
+
+    function calculateTotalExpenses() {
+        return expensesData.reduce((total, item) => total + item.cost, 0);
+    }
+
+    // Removed this function as it is not needed in the bar chart code.
+    // function calculateRGBAColor(min, max, value) {
+    // }
+
+    function createBarChart() {
+        var ctx = document.getElementById('barChart').getContext('2d');
+
+        var labels = expensesData.map(item => item.category);
+        var data = expensesData.map(item => item.cost);
+
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Expenses',
+                    data: data,
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+
+
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Expenses by Category'
+                }
+            }
+        });
+
+        var totalExpenses = calculateTotalExpenses();
+        document.getElementById('totalExpenses').innerText = 'Total: ₹' + totalExpenses;
+    }
+
+    createBarChart();
+</script>
+
+
+
+@* new code *@
+

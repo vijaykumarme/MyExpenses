@@ -1,8 +1,192 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    var datetime = DateTime.Now;
+    var strMonth = Convert.ToInt32(datetime.Month);
+
+    string currentMonth = string.Empty;
+
+    switch (strMonth)
+    {
+        case 1:
+            currentMonth = "Jan";
+            break;
+        case 2:
+            currentMonth = "Feb";
+            break;
+        case 3:
+            currentMonth = "Mar";
+            break;
+        case 4:
+            currentMonth = "Apr";
+            break;
+        case 5:
+            currentMonth = "May";
+            break;
+        case 6:
+            currentMonth = "Jun";
+            break;
+        case 7:
+            currentMonth = "Jul";
+            break;
+        case 8:
+            currentMonth = "Aug";
+            break;
+        case 9:
+            currentMonth = "Sep";
+            break;
+        case 10:
+            currentMonth = "Oct";
+            break;
+        case 11:
+            currentMonth = "Nov";
+            break;
+        case 12:
+            currentMonth = "Dec";
+            break;
+
+    }
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<h2 class="py-4">Expenses: @currentMonth</h2>
+
+    <!-- Add necessary libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        canvas {
+            /* Add any styles for the canvas here if needed */
+        }
+    </style>
+
+    <canvas id="pieChart" width="400" height="400"></canvas>
+    <p class="pt-4" id="totalExpenses"></p>
+
+    <script>
+        var expensesData = [
+            { "category": "Food", "cost": 500 },
+            { "category": "Travel", "cost": 1000 },
+            { "category": "Gaming", "cost": 250 },
+            { "category": "Rent", "cost": 100 }
+        ];
+    </script>
+    <script>
+
+            function calculateTotalExpenses() {
+                return expensesData.reduce((total, item) => total + item.cost, 0);
+            }
+
+        function calculateRGBAColor(min, max, value) {
+            var intensity = (value - min) / (max - min);
+            var maxColor = [255, 0, 0]; // Red
+            var minColor = [0, 255, 0]; // Green
+            var color = maxColor.map((maxValue, index) => {
+                var minValue = minColor[index];
+                return Math.round(minValue + intensity * (maxValue - minValue));
+            });
+            color.push(1); // Alpha value
+            return 'rgba(' + color.join(', ') + ')';
+        }
+
+        function createPieChart() {
+            var ctx = document.getElementById('pieChart').getContext('2d');
+
+            var labels = expensesData.map(item => item.category);
+            var data = expensesData.map(item => item.cost);
+
+            var maxCost = Math.max(...data);
+            var minCost = Math.min(...data);
+
+            var backgroundColor = data.map(cost => calculateRGBAColor(minCost, maxCost, cost));
+
+            var pieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: backgroundColor,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            var totalExpenses = calculateTotalExpenses();
+            document.getElementById('totalExpenses').innerText = 'Total: ₹' + totalExpenses;
+        }
+
+        createPieChart();
+    </script>
+
+
+@* <script>
+    // Same as pie chart code
+    var expensesData = [
+        { "category": "Food", "cost": 500 },
+        { "category": "Travel", "cost": 1000 },
+        { "category": "Gaming", "cost": 250 },
+        { "category": "Rent", "cost": 100 }
+    ];
+
+    function calculateTotalExpenses() {
+        return expensesData.reduce((total, item) => total + item.cost, 0);
+    }
+
+    // Calculate the maximum and minimum values of the data set.
+    const maxCost = Math.max(...expensesData.map(item => item.cost));
+    const minCost = Math.min(...expensesData.map(item => item.cost));
+
+    // Create a function to calculate the gradient color for a given value.
+    const calculateRGBAColor = (minCost, maxCost, cost) => {
+        // Calculate the percentage of the value relative to the maximum and minimum values.
+        const percentage = (cost - minCost) / (maxCost - minCost);
+
+        // Create a gradient object with green as the starting color and red as the ending color.
+        const gradientObject = {
+            start: '#00FF00',
+            end: '#FF0000',
+        };
+
+        // Calculate the color at the given percentage.
+        const color = gradientObject.start + ((gradientObject.end - gradientObject.start) * percentage);
+
+        // Return the color.
+        return color;
+    };
+
+    function createBarChart() {
+        var ctx = document.getElementById('barChart').getContext('2d');
+
+        var labels = expensesData.map(item => item.category);
+        var data = expensesData.map(item => item.cost);
+
+        var backgroundColor = data.map(cost => calculateRGBAColor(minCost, maxCost, cost));
+
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Expenses',
+                    data: data,
+                    backgroundColor: backgroundColor,
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Expenses by Category'
+                }
+            }
+        });
+
+        var totalExpenses = calculateTotalExpenses();
+        document.getElementById('totalExpenses').innerText = 'Total: ₹' + totalExpenses;
+    }
+
+    createBarChart();
+</script> *@

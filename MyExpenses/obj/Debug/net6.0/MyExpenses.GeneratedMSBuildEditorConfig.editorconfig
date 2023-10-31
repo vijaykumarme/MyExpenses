@@ -16,6 +16,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Expenses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Expenses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Expenses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/History/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/History/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/History/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Shared/_Forms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb3Jtcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Applications/ASP.NET Applications/MyExpenses/MyExpenses/Views/Shared/_ValidationScriptsPartial.cshtml]
