@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<ExpensesMonthWise>
+
+@{
     var datetime = DateTime.Now;
     var strMonth = Convert.ToInt32(datetime.Month);
 
@@ -49,75 +51,75 @@
 
 <h2 class="py-4">Expenses: @currentMonth</h2>
 
-    <!-- Add necessary libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        canvas {
-            /* Add any styles for the canvas here if needed */
+<!-- Add necessary libraries -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    canvas {
+        /* Add any styles for the canvas here if needed */
+    }
+</style>
+
+<canvas id="pieChart" width="400" height="400"></canvas>
+<p class="pt-4" id="totalExpenses"></p>
+
+<script>
+    var expensesData = [];
+    @foreach (var item in Model)
+    {
+        @:expensesData.push({ category: '@item.CategoryName', cost: @item.Money })
+    }
+
+</script>
+<script>
+
+        function calculateTotalExpenses() {
+            return expensesData.reduce((total, item) => total + item.cost, 0);
         }
-    </style>
 
-    <canvas id="pieChart" width="400" height="400"></canvas>
-    <p class="pt-4" id="totalExpenses"></p>
+    function calculateRGBAColor(min, max, value) {
+        var intensity = (value - min) / (max - min);
+        var maxColor = [255, 0, 0]; // Red
+        var minColor = [0, 255, 0]; // Green
+        var color = maxColor.map((maxValue, index) => {
+            var minValue = minColor[index];
+            return Math.round(minValue + intensity * (maxValue - minValue));
+        });
+        color.push(1); // Alpha value
+        return 'rgba(' + color.join(', ') + ')';
+    }
 
-    <script>
-        var expensesData = [
-            { "category": "Food", "cost": 500 },
-            { "category": "Travel", "cost": 1000 },
-            { "category": "Gaming", "cost": 250 },
-            { "category": "Rent", "cost": 100 }
-        ];
-    </script>
-    <script>
+    function createPieChart() {
+        var ctx = document.getElementById('pieChart').getContext('2d');
 
-            function calculateTotalExpenses() {
-                return expensesData.reduce((total, item) => total + item.cost, 0);
+        var labels = expensesData.map(item => item.category);
+        var data = expensesData.map(item => item.cost);
+
+        var maxCost = Math.max(...data);
+        var minCost = Math.min(...data);
+
+        var backgroundColor = data.map(cost => calculateRGBAColor(minCost, maxCost, cost));
+
+        var pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: backgroundColor,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
             }
+        });
 
-        function calculateRGBAColor(min, max, value) {
-            var intensity = (value - min) / (max - min);
-            var maxColor = [255, 0, 0]; // Red
-            var minColor = [0, 255, 0]; // Green
-            var color = maxColor.map((maxValue, index) => {
-                var minValue = minColor[index];
-                return Math.round(minValue + intensity * (maxValue - minValue));
-            });
-            color.push(1); // Alpha value
-            return 'rgba(' + color.join(', ') + ')';
-        }
+        var totalExpenses = calculateTotalExpenses();
+        document.getElementById('totalExpenses').innerText = 'Total: ₹' + totalExpenses;
+    }
 
-        function createPieChart() {
-            var ctx = document.getElementById('pieChart').getContext('2d');
-
-            var labels = expensesData.map(item => item.category);
-            var data = expensesData.map(item => item.cost);
-
-            var maxCost = Math.max(...data);
-            var minCost = Math.min(...data);
-
-            var backgroundColor = data.map(cost => calculateRGBAColor(minCost, maxCost, cost));
-
-            var pieChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: data,
-                        backgroundColor: backgroundColor,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true
-                }
-            });
-
-            var totalExpenses = calculateTotalExpenses();
-            document.getElementById('totalExpenses').innerText = 'Total: ₹' + totalExpenses;
-        }
-
-        createPieChart();
-    </script>
+    createPieChart();
+</script>
 
 
 @* <script>

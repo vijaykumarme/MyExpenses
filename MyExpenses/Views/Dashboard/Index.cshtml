@@ -1,4 +1,6 @@
-﻿<div class="row py-2">
+﻿@model List<DashboardExpenses>
+
+<div class="row py-2">
     <span class="col-8"></span>
     <span class="col-4" style="text-align: end; color: black; font: bold"><a asp-controller="Home" asp-action="Index" style="text-decoration: none;"><i class="bi bi-arrow-left" style="padding-right: 2px;"></i><span style="font-weight:bolder;">Back</span></a></span>
 </div>
@@ -16,14 +18,23 @@
 <p class="pt-4" id="totalExpenses"></p>
 
 <script>
+    var expensesData = [];
+    @foreach (var item in Model)
+    {
+        @:expensesData.push({ category: "@item.CategoryName", cost: @item.Money })
+    }
+</script>
+
+<script>
     // Same as pie chart code
-    var expensesData = [
-        { "category": "Food", "cost": 500 },
-        { "category": "Travel", "cost": 1000 },
-        { "category": "Gaming", "cost": 250 },
-        { "category": "Rent", "cost": 100 },
-        { "category": "Snacks", "cost": 20 }
-    ];
+    // var expensesData = [
+    //     { "category": "Food", "cost": 500 },
+    //     { "category": "Travel", "cost": 1000 },
+    //     { "category": "Gaming", "cost": 250 },
+    //     { "category": "Rent", "cost": 100 },
+    //     { "category": "Snacks", "cost": 20 }
+    // ];
+
 
     function calculateTotalExpenses() {
         return expensesData.reduce((total, item) => total + item.cost, 0);
@@ -47,6 +58,7 @@
                     label: 'Expenses',
                     data: data,
                     backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+  
 
 
                     borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],

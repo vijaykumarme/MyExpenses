@@ -1,0 +1,11 @@
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\bin\Debug\net6.0\Expenses.Utility.deps.json
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\bin\Debug\net6.0\Expenses.Utility.dll
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\bin\Debug\net6.0\Expenses.Utility.pdb
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\Expenses.Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\Expenses.Utility.AssemblyInfoInputs.cache
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\Expenses.Utility.AssemblyInfo.cs
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\Expenses.Utility.csproj.CoreCompileInputs.cache
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\Expenses.Utility.dll
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\refint\Expenses.Utility.dll
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\Expenses.Utility.pdb
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.Utility\obj\Debug\net6.0\ref\Expenses.Utility.dll

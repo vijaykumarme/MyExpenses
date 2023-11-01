@@ -1,30 +1,50 @@
-﻿<form method="post" class="mt-4">
+﻿@model Expenses
+
+@{
+    var CategoryList = new[]
+    {
+        new {Id = 1, Category = "BreakFast"},
+        new {Id = 2, Category = "Lunch"},
+        new {Id = 3, Category = "Dinner" },
+        new {Id = 4, Category = "Travel" },
+        new {Id = 5, Category = "Snacks" },
+        new {Id = 6, Category = "Recharges" },
+        new {Id = 7, Category = "Others"}
+    };
+}
+
+<form method="post" class="mt-4">
     <div class="card border-primary mb-3 mt-3 pt-1" style="max-width: 30rem;">
-        <div class="card-header p-2 text-center"><h3>Edit Expense</h3></div>
-        @* <div class="row pt-4 pb-0">
-        <span class="col-8"></span>
-        <a asp-controller="Home" asp-action="Index" class="col-4 pe-4" style="text-align: end; text-decoration:none"><i class="bi bi-arrow-left text-success"></i>Back</a>
-        </div> *@
+        <div class="card-header p-2 text-center"><h3>Edit Expenses</h3></div>
         <div class="card-body">
+            <input asp-for="Id" hidden />
             <div class="form-group">
-                <label class="col-form-label mt-4" for="inputDefault">Category Name</label>
-                <input type="text" class="form-control" placeholder="Category" id="inputDefault">
+                <label asp-for="Category" class="col-form-label mt-4" for="inputDefault"></label>
+                <select id="categoryName" asp-for="Category" class="form-control my-2">
+                    @foreach (var item in CategoryList)
+                    {
+                        <option asp-for="@item.Category" value="@item.Id">@item.Category</option>
+                    }
+                </select>>
+                <a class="text-decoration-none">
+                    <i class="bi bi-plus-circle pe-1"></i>create new category
+                </a>
             </div>
             <div class="form-group">
-                <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Name</label>
-                <input class="form-control form-control-sm" type="text" placeholder="Enter Name" id="inputSmall">
+                <label asp-for="Name" class="col-form-label col-form-label-sm mt-4" for="inputSmall">Name</label>
+                <input asp-for="Name" class="form-control form-control-sm" type="text" id="inputSmall">
             </div>
             <div class="form-group">
-                <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Location</label>
-                <input class="form-control form-control-sm" type="text" placeholder="Enter Location" id="inputSmall">
+                <label asp-for="Location" class="col-form-label col-form-label-sm mt-4" for="inputSmall"></label>
+                <input asp-for="Location" class="form-control form-control-sm" type="text" id="inputSmall">
             </div>
             <div class="form-group">
-                <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Money</label>
-                <input class="form-control form-control-sm" type="text" placeholder="Enter Money" id="inputSmall">
+                <label asp-for="Money" class="col-form-label col-form-label-sm mt-4" for="inputSmall">Money</label>
+                <input asp-for="Money" class="form-control form-control-sm" type="number" placeholder="Enter Money" id="inputSmall">
             </div>
             <div class="form-group">
-                <label class="col-form-label col-form-label-sm mt-4" for="inputSmall">Time</label>
-                <input class="form-control form-control-sm" type="text" placeholder="Enter Time" id="inputSmall">
+                <label asp-for="Date" class="col-form-label col-form-label-sm mt-4" for="inputSmall"></label>
+                <input asp-for="Date" class="form-control form-control-sm" type="datetime-local" id="inputSmall">
             </div>
             <div class="form-group align-items-center row pt-4">
                 <div class="col-6">
@@ -37,3 +57,24 @@
         </div>
     </div>
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

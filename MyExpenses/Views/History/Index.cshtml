@@ -1,4 +1,6 @@
-﻿<div class="row py-2">
+﻿@model List<ExpensesHistory>
+
+<div class="row py-2">
     <span class="col-8"></span>
     <span class="col-4" style="text-align: end; color: black; font: bold"><a asp-controller="Home" asp-action="Index" style="text-decoration: none;"><i class="bi bi-arrow-left" style="padding-right: 2px;"></i><span style="font-weight:bolder;">Back</span></a></span>
 </div>
@@ -21,215 +23,24 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="table-primary">
-                <th scope="row">primary</th>
-                <th>Date</th>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Money</th>
-                <th>Location</th>
-                <th>
-                    <a asp-controller="History" asp-action="Edit"><i class="bi bi-pencil-square"></i></a>
-                </th>
-                <th>
-                    <a asp-controller="History" asp-action="Delete"><i class="bi bi-trash"></i></a>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-                    
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
-            <tr class="table-primary">
-                <th scope="row">Primary</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">Name</th>
-                <th scope="col">Money</th>
-                <th scope="col">Location</th>
-                <th>
-                    <i class="bi bi-pencil-square"></i>
-
-                </th>
-                <th>
-                    <i class="bi bi-trash"></i>
-                </th>
-            </tr>
+            @foreach(var item in Model)
+            {
+                <input asp-for="@item.ExpId" hidden />
+                <tr class="table-primary">
+                    <th scope="row">@item.Id</th>
+                    <th>@item.Date</th>
+                    <th>@item.Category</th>
+                    <th>@item.Name</th>
+                    <th>@item.Money</th>
+                    <th>@item.Location</th>
+                    <th>
+                        <a asp-controller="History" asp-action="Edit" asp-route-id="@item.ExpId"><i class="bi bi-pencil-square"></i></a>
+                    </th>
+                    <th>
+                        <a asp-controller="History" asp-action="Delete" asp-route-id="@item.ExpId"><i class="bi bi-trash"></i></a>
+                    </th>
+                </tr>
+            }           
         </tbody>
     </table>
 </div>

@@ -1,0 +1,11 @@
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\bin\Debug\net6.0\Expenses.DataAccess.deps.json
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\bin\Debug\net6.0\Expenses.DataAccess.dll
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\bin\Debug\net6.0\Expenses.DataAccess.pdb
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\Expenses.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\Expenses.DataAccess.AssemblyInfoInputs.cache
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\Expenses.DataAccess.AssemblyInfo.cs
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\Expenses.DataAccess.csproj.CoreCompileInputs.cache
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\Expenses.DataAccess.dll
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\refint\Expenses.DataAccess.dll
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\Expenses.DataAccess.pdb
+C:\Applications\ASP.NET Applications\MyExpenses\Expenses.DataAccess\obj\Debug\net6.0\ref\Expenses.DataAccess.dll
