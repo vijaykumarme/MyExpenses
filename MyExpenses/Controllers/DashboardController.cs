@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using MyExpenses.Data;
 using MyExpenses.Models;
+using Npgsql;
 
 namespace MyExpenses.Controllers
 {
@@ -20,25 +21,61 @@ namespace MyExpenses.Controllers
             string connectionString = _configuration.GetConnectionString("connString");
             List<DashboardExpenses> obj = new List<DashboardExpenses>();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            //using (SqlConnection conn = new SqlConnection(connectionString))
+            //{
+            //    try
+            //    {
+            //        conn.Open();
+            //        string query = "EXEC usp_get_history_dashboard";
+
+            //        using (SqlCommand cmd = new SqlCommand(query, conn))
+            //        {
+            //            using (SqlDataReader reader = cmd.ExecuteReader())
+            //            {
+            //                while (reader.Read())
+            //                {
+            //                    DashboardExpenses readObj = new DashboardExpenses
+            //                    {
+            //                        Id = Convert.ToInt32(reader["Id"]),
+            //                        CategoryName = reader["CategoryName"].ToString(),
+            //                        Money = Convert.ToInt32(reader["Money"])
+            //                    };
+            //                    obj.Add(readObj);
+            //                }
+            //            }
+            //        }
+            //        conn.Close();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        return NotFound();
+            //    }
+
+
+            //}
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "EXEC usp_get_expense_history";
+                    string currSchema = "vijay";
+                    string query = "SELECT * FROM fn_get_history_dashboard(@schemaName);";
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+
+                        cmd.Parameters.AddWithValue("schemaName", currSchema);
+
+                        using (NpgsqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
                                 DashboardExpenses readObj = new DashboardExpenses
                                 {
-                                    Id = Convert.ToInt32(reader["Id"]),
-                                    ExpId = Convert.ToInt32(reader["ExpId"]),
-                                    CategoryName = reader["CategoryName"].ToString(),
-                                    Money = Convert.ToInt32(reader["Money"])
+                                    Id = Convert.ToInt32(reader["id"]),
+                                    CategoryName = reader["categoryName"].ToString(),
+                                    Money = Convert.ToInt32(reader["money"])
                                 };
                                 obj.Add(readObj);
                             }

@@ -9,7 +9,8 @@
         new {Id = 4, Category = "Travel" },
         new {Id = 5, Category = "Snacks" },
         new {Id = 6, Category = "Recharges" },
-        new {Id = 7, Category = "Others"}
+        new {Id = 7, Category = "Others"},
+        new {Id = 8, Category = "Education"}
     };
 }
 
@@ -19,16 +20,13 @@
         <div class="card-body">
             <input asp-for="Id" hidden />
             <div class="form-group">
-                <label asp-for="Category" class="col-form-label mt-4" for="inputDefault"></label>
-                <select id="categoryName" asp-for="Category" class="form-control my-2" disabled>
+                <label asp-for="Category" class="col-form-label col-form-label-sm mt-4" for="inputSmall"></label>
+                <select asp-for="Category" class="form-control my-2">
                     @foreach (var item in CategoryList)
                     {
                         <option asp-for="@item.Category" value="@item.Id">@item.Category</option>
                     }
-                </select>>
-                <a class="text-decoration-none">
-                    <i class="bi bi-plus-circle pe-1"></i>create new category
-                </a>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Name" class="col-form-label col-form-label-sm mt-4" for="inputSmall">Name</label>

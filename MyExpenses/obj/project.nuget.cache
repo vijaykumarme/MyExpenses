@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "13pBWSJl9F4j1ikFtEItXnJM9NJ5j7hFHu5s3KYlhvppFRGokiupylnPb738FuEUvhHcoM8J1YrkHwuh1fd6bg==",
+  "dgSpecHash": "R60CpGwAUQeCrPeaHe46CVfFpkNsAIytLhAgHu307sVzIMXdUSs9PQg0td9BCLk/0LrjE2Ee3Ra2Z/XguKk1gw==",
   "success": true,
   "projectFilePath": "C:\\Applications\\ASP.NET Applications\\MyExpenses\\MyExpenses\\MyExpenses.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,8 @@
     "C:\\Users\\vijay\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\vijay\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\vijay\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\vijay\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\vijay\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\vijay\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\vijay\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\vijay\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

@@ -85,3 +85,5 @@ C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses\bin\Debug\net6.0\runt
 C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses\obj\Debug\net6.0\MyExpenses.csproj.AssemblyReference.cache
 C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses\obj\Debug\net6.0\MyExpenses.csproj.CopyComplete
+C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses\bin\Debug\net6.0\Npgsql.dll
+C:\Applications\ASP.NET Applications\MyExpenses\MyExpenses\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
